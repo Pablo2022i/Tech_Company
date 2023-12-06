@@ -20,7 +20,7 @@
 }
 
 .toggler-icon {
-    background-color: #000000;
+    background-color: #ffffff;
     display: block;
     position: absolute;
     height: 3px;
@@ -70,7 +70,6 @@
     display: none;
 }
 
-
 @media (max-width: 767px) {
     .toggler-icon {
         display: block;
@@ -79,11 +78,19 @@
     .nav-item {
         margin-left: 0;
     }
+
+    #gridContainer {
+        margin: 0;
+    }
 }
 
 @media (min-width: 768px) {
 
     .toggler-icon {
         display: none;
+    }
+
+    #gridContainer {
+        margin: 0;
     }
 }
