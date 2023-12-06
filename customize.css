@@ -20,7 +20,7 @@
 }
 
 .toggler-icon {
-    background-color: #ffffff;
+    background-color: #000000;
     display: block;
     position: absolute;
     height: 3px;
@@ -71,7 +71,7 @@
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     .toggler-icon {
         display: block;
     }
@@ -81,7 +81,7 @@
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
 
     .toggler-icon {
         display: none;
