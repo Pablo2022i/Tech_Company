@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f6f9fc;
+            font-family: 'Segoe UI', 'Tahoma', sans-serif;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 48px;
+        }
+
+        #map-and-text-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        #map-container,
+        #text-container {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #map {
+            width: 50vw;
+            height: 400px;
+        }
+
+        #text {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #additional-boxes {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            width: 95%;
+            box-sizing: border-box;
+        }
+
+        .additional-box {
+            width: calc(33.33% - 25px); 
+            margin: 10px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .additional-box h2 {
+             margin-bottom: 10px; 
+        }
+
+        .additional-box button {
+            background-color: #4169E1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGVlLxUxUYwDE1RsMQfZbmcyj_lGzCUck&callback=initMap" async defer></script>
+</head>
+<body>
+   <div id="container">
+        <h1>Get in touch</h1>
+        
+        <!--map and text-->
+        <div id="map-and-text-container">
+            <div id="map-container">
+                <div id="map"></div>
+            </div>
+
+            <div id="text-container">
+                <div id="text">
+                    <h2>Headquarters</h2>
+                    <p>95 N 300 W, Salt Lake City, UT 84101</p><br>
+                    <h2>Phone</h2>
+                    <p>(801) 524-8100</p><br>
+                    <h2>Email</h2>
+                    <p>contact@cybercore.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!--three boxes under the map-->
+        <div id="additional-boxes">
+            <div class="additional-box">
+                <h2>Sales</h2>
+                <p>Let's chat with our sales team.</p>
+                <button>Contact Sales</button>
+            </div>
+            <div class="additional-box">
+                <h2>Help & Support</h2>
+                <p>Have questions? We are here for you!</p>
+                <button>Get Support</button>
+            </div>
+            <div class="additional-box">
+                <h2>Resources</h2>
+                <p>Get news, company info, and resources.</p>
+                <button>Visit Resources</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function initMap() {
+            // Coordinates for the address
+            var addressCoordinates = { lat: 40.7712, lng: -111.9002 };
+
+            // Create a new map 
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: addressCoordinates,
+                zoom: 17
+            });
+
+            // Add a marker 
+            var marker = new google.maps.Marker({
+                position: addressCoordinates,
+                map: map,
+                title: 'Cybercore Technology'
+            });
+        }
+    </script>
+
+</body>
+</html>
 
