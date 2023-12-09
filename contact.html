@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="customize.css">
+    <title>Contact</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGVlLxUxUYwDE1RsMQfZbmcyj_lGzCUck&callback=initMap" async defer></script>
+</head>
+<body>
+   <div id="container">
+        <h1>Get in touch</h1>
+        
+        <!--map and text-->
+        <div id="map-and-text-container">
+            <div id="map-container">
+                <div id="map"></div>
+            </div>
+
+            <div id="text-container">
+                <div id="text">
+                    <h2>Headquarters</h2>
+                    <p>95 N 300 W, Salt Lake City, UT 84101</p><br>
+                    <h2>Phone</h2>
+                    <p>(801) 524-8100</p><br>
+                    <h2>Email</h2>
+                    <p>contact@cybercore.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!--three boxes under the map-->
+        <div id="additional-boxes">
+            <div class="additional-box">
+                <h2>Sales</h2>
+                <p>Let's chat with our sales team.</p>
+                <button>Contact Sales</button>
+            </div>
+            <div class="additional-box">
+                <h2>Help & Support</h2>
+                <p>Have questions? We are here for you!</p>
+                <button>Get Support</button>
+            </div>
+            <div class="additional-box">
+                <h2>Resources</h2>
+                <p>Get news, company info, and resources.</p>
+                <button>Visit Resources</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function initMap() {
+            // Coordinates for the address
+            var addressCoordinates = { lat: 40.7712, lng: -111.9002 };
+
+            // Create a new map 
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: addressCoordinates,
+                zoom: 17
+            });
+
+            // Add a marker 
+            var marker = new google.maps.Marker({
+                position: addressCoordinates,
+                map: map,
+                title: 'Cybercore Technology'
+            });
+        }
+    </script>
+
+</body>
+</html>
 
