@@ -85,10 +85,6 @@
     #gridContainer {
         margin: 0;
     }
-
-    header.bg-light{
-        height: 40px;
-    };
 }
 
 @media (min-width: 768px) {
@@ -97,13 +93,12 @@
         display: none;
     }
 
-    #gridContainer {
+    #gridContainer.row {
+        flex-wrap: wrap;
         margin: 0;
     }
 
-    header.bg-light{
-        height: 46px;
-    };
+
 }
 
 /*styles for contact page - feel free to change it*/
