@@ -350,4 +350,14 @@ h1 {
   .image-container:hover h2 {
     opacity: 1;
   }
+
+  .social-media-icons img {
+    max-width: 24px; /* Adjust the size as needed */
+    height: auto;
+}
+
+.email-input {
+  width: 100%; /* Adjust the width as needed */
+}
+
   /*end of styles for team page*/
