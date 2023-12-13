@@ -188,9 +188,8 @@
     <script>
         // JavaScript Automated Date
         function updateDateTime() {
-            var currentDateTime = new Date();
-            var formattedDateTime = currentDateTime.toLocaleString();
-            document.getElementById('datetime').innerHTML = formattedDateTime;
+            let currentDateTime = new Date();
+            document.getElementById('datetime').innerHTML = currentDateTime.toLocaleString();
         }
 
         setInterval(updateDateTime, 1000);
