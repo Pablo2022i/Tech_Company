@@ -70,6 +70,28 @@
     display: none;
 }
 
+.first-section button, .third-section button{
+    width: 180px;
+    color: #000;
+    font-size: 12px;
+    padding: 12px 0;
+    background: rgba(252, 249, 249, 0.7);
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.first-section button:hover, .third-section button:hover{
+    color: #fff;
+    background: rgba(7, 7, 7, 0.7);
+}
+
+#DiscountCode {
+    cursor: pointer;
+}
+
+
 @media (max-width: 767px) {
     .toggler-icon {
         display: block;
@@ -85,6 +107,14 @@
     #gridContainer {
         margin: 0;
     }
+
+    .second-section{
+        height: 200vh; !important;
+    }
+
+    .first-section{
+        height: 50vh; !important;
+    }
 }
 
 @media (min-width: 768px) {
@@ -97,8 +127,6 @@
         flex-wrap: wrap;
         margin: 0;
     }
-
-
 }
 
 /*styles for contact page - feel free to change it*/
