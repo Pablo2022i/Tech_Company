@@ -10,7 +10,35 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .custom-modal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
 
+        .custom-modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .custom-modal h2 {
+            color: #0070c9;
+        }
+
+        .custom-modal p {
+            color: #333;
+        }
+    </style>
 </head>
 
 <body class="d-flex h-100 text-white bg-dark" style="font: 12px '.AppleSystemUIFont'">
@@ -154,14 +182,6 @@
                 showSlide(container, images, currentIndex);
             }
     
-            function displayMacDetails() {
-                alert("MacBook Repair Details:\n- Model: iPhone 15\n- Year: 2023\n- Processor: M2\n- RAM: 16GB\n- Storage: 512GB SSD");
-            }
-    
-            function displaySecondSlideshowDetails() {
-                alert("MacBook Repair Details:\n- Model: iPhone 13\n- Year: 2021\n- Processor: M2\n- RAM: 16GB\n- Storage: 512GB SSD");
-            }
-    
             showSlide(macSlideshowContainer, macImages, currentMacSlide);
             showSlide(secondSlideshowContainer, secondSlideshowImages, currentSecondSlide);
     
@@ -169,6 +189,42 @@
             setInterval(() => nextSlide(macImages, currentMacSlide, macSlideshowContainer, (index) => currentMacSlide = index), 2000);
             setInterval(() => nextSlide(secondSlideshowImages, currentSecondSlide, secondSlideshowContainer, (index) => currentSecondSlide = index), 2000);
         </script>
+
+        <script>
+            function displayMacDetails() {
+                showCustomMessage("About this product", "Model: AirPods 2nd Generation <br>Year: 2020<br>");
+            }
+        
+            function displaySecondSlideshowDetails() {
+                showCustomMessage("About this product", "Model: Apple Pencil <br>Year: 2021<br>");
+            }
+        
+            function showCustomMessage(title, content) {
+                var modalContainer = document.createElement('div');
+                modalContainer.className = 'custom-modal';
+        
+                var modalContent = document.createElement('div');
+                modalContent.className = 'custom-modal-content';
+        
+                var modalTitle = document.createElement('h2');
+                modalTitle.innerHTML = title;
+        
+                var modalText = document.createElement('p');
+                modalText.innerHTML = content;
+        
+                modalContent.appendChild(modalTitle);
+                modalContent.appendChild(modalText);
+                modalContainer.appendChild(modalContent);
+                modalContainer.addEventListener('click', function (event) {
+                if (event.target === modalContainer) {
+                document.body.removeChild(modalContainer);
+            }
+        });
+
+        document.body.appendChild(modalContainer);
+    }
+</script>
+
     </main>
 
 <!-- Footer -->
