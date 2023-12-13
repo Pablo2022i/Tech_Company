@@ -360,4 +360,20 @@ h1 {
   width: 100%; /* Adjust the width as needed */
 }
 
+#slideshow-container {
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.visible {
+  display: block;
+}
+
   /*end of styles for team page*/
