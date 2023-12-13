@@ -91,28 +91,85 @@
 
     <header class="bg-light" style="height: 71px"></header>
 
-    <!-- accesories Repair Section -->
-    <div class="container mt-5">
-        <div class="first-section">
-            <h2>Accessories Repair</h2>
-            <img src="images/AirPods_Repair.webp" alt="Airpods Repair Image">
-            <button onclick="displayProductDetails('mac')">View Details</button>
+    <main>
+        <!-- Accessories Repair Section -->
+        <div class="container mt-5">
+            <div class="first-section text-center">
+                <h2>AirPods</h2>
+                <div id="macSlideshow" class="slideshow-container">
+                </div>
+                <button onclick="displayMacDetails()">View Details</button>
+            </div>
+        </div>        
+    
+        <!-- Second Slideshow Section -->
+        <div class="container mt-5">
+            <div class="second-section text-center">
+                <h2>Apple pencil and Apple Watch</h2>
+                <div id="secondSlideshow" class="slideshow-container">
+                </div>
+                <button onclick="displaySecondSlideshowDetails()">View Details</button>
+            </div>
         </div>
-    </div>
-
-    <script>
-        // JavaScript array for product repair
-        var productDetails = {
-            'airPods': {
-                'name': 'airPods Repair Service',
-                'description': 'We repare your airpods!'
+    
+        <script>
+            const macImages = [
+                'images/airpod-repair-1-768x512.jpg',
+                'images/airpods_repair_1662703085_109da66a_progressive.jpg',
+                'images/airPods_Repair.webp'
+            ];
+    
+            const secondSlideshowImages = [
+                'images/Apple_Pencil_Repair.jpeg',
+                'images/Apple_Watch_Repair.webp',
+                'images/airpod-repair-1-768x512.jpg'
+            ];
+    
+            let currentMacSlide = 0;
+            let currentSecondSlide = 0;
+    
+            const macSlideshowContainer = document.getElementById('macSlideshow');
+            const secondSlideshowContainer = document.getElementById('secondSlideshow');
+    
+            function showSlide(container, images, currentIndex) {
+                container.innerHTML = ''; // Clear the container
+    
+                const img = document.createElement('img');
+                img.src = images[currentIndex];
+                img.alt = `Slide Image ${currentIndex + 1}`;
+                img.width = 800;
+                img.height = 600;
+                container.appendChild(img);
             }
-        };
-
-        function displayProductDetails(product) {
-            alert(productDetails[product].name + '\n\n' + productDetails[product].description);
-        }
-    </script>
+    
+            function nextSlide(images, currentIndex, container, updateFunction) {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateFunction(currentIndex);
+                showSlide(container, images, currentIndex);
+            }
+    
+            function previousSlide(images, currentIndex, container, updateFunction) {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateFunction(currentIndex);
+                showSlide(container, images, currentIndex);
+            }
+    
+            function displayMacDetails() {
+                alert("MacBook Repair Details:\n- Model: iPhone 15\n- Year: 2023\n- Processor: M2\n- RAM: 16GB\n- Storage: 512GB SSD");
+            }
+    
+            function displaySecondSlideshowDetails() {
+                alert("MacBook Repair Details:\n- Model: iPhone 13\n- Year: 2021\n- Processor: M2\n- RAM: 16GB\n- Storage: 512GB SSD");
+            }
+    
+            showSlide(macSlideshowContainer, macImages, currentMacSlide);
+            showSlide(secondSlideshowContainer, secondSlideshowImages, currentSecondSlide);
+    
+            // Auto-advance the slideshows every 2 seconds 
+            setInterval(() => nextSlide(macImages, currentMacSlide, macSlideshowContainer, (index) => currentMacSlide = index), 2000);
+            setInterval(() => nextSlide(secondSlideshowImages, currentSecondSlide, secondSlideshowContainer, (index) => currentSecondSlide = index), 2000);
+        </script>
+    </main>
 
     <!-- Footer -->
     <footer class="py-5 px-5 bg-dark text-white">
