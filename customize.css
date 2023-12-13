@@ -70,7 +70,7 @@
     display: none;
 }
 
-.first-section button, .third-section button{
+.first-section button, .second-section button, .third-section button{
     width: 180px;
     color: #000;
     font-size: 12px;
@@ -374,6 +374,16 @@ h1 {
 
 .visible {
   display: block;
+}
+
+.slideshow-details-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
   /*end of styles for team page*/
