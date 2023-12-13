@@ -151,12 +151,11 @@ h1 {
 
 #map-container,
 #text-container {
-    padding: 20px;
     box-sizing: border-box;
 }
 
 #map {
-    width: 50vw;
+    width: 50%;
     height: 400px;
 }
 
