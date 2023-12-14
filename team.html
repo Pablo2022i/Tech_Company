@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="customize.css">
     <title>Team</title>
   <link rel="icon" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="customize.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -34,7 +35,7 @@
           <span class="toggler-icon bottom-bar"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto" style="text-align: center">
             <li class="nav-item active">
               <a class="nav-link" href="index.html">
                 HOME
@@ -54,20 +55,21 @@
                  href="#">
                 SERVICE
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark rounded-3 gap-1 shadow" style="background-color: rgba(0,0,0,0.7)"
+              <ul class="dropdown-menu dropdown-menu-dark rounded-3 gap-1 shadow"
+                  style="background-color: rgba(0,0,0,0.7); text-align: center"
                   aria-labelledby="navbarDropdown">
                 <li>
-                  <a href="macRepair.html" class="dropdown-item rounded-2 py-1">
+                  <a href="MacRepair.html" class="dropdown-item rounded-2 py-4">
                     MAC REPAIR
                   </a>
                 </li>
                 <li>
-                  <a href="accessoriesRepair.html" class="dropdown-item rounded-2 py-1">
+                  <a href="AccessoriesRepair.html" class="dropdown-item rounded-2 py-4">
                     ACCESSORIES REPAIR
                   </a>
                 </li>
                 <li>
-                  <a href="iPhoneRepair.html" class="dropdown-item rounded-2 py-1">
+                  <a href="iPhoneRepair.html" class="dropdown-item rounded-2 py-4">
                     IPHONE REPAIR
                   </a>
                 </li>
@@ -89,56 +91,34 @@
     </nav>
   </header>
 
-
   <header class="bg-light" style="height: 71px;"></header>
 
 
     <h1>Meet Our Team</h1>
   <div class="container">
-    <div class="image-container">
-      <img src="images/Frank.jpg" alt="Testimonial Image 1">
-      <h2>Frank</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="image-container h-100 w-100 m-0 my-3">
+          <img src="images/Frank.jpg" alt="Testimonial Image 1">
+          <h2>Frank</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="image-container h-100 w-100 m-0 my-3">
+          <img src="images/Rie.jpg" alt="Testimonial Image 2">
+          <h2>Rie</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="image-container h-100 w-100 m-0 my-3">
+          <img src="images/Pablo.jpg" alt="Testimonial Image 3">
+          <h2>Pablo</h2>
+        </div>
+      </div>
     </div>
-    <div class="image-container">
-      <img src="images/Rie.jpg" alt="Testimonial Image 2">
-      <h2>Rie</h2>
-    </div>
-    <div class="image-container">
-      <img src="images/Pablo.jpg" alt="Testimonial Image 3">
-      <h2>Pablo</h2>
-    </div>
-    <figure class="testimonials">
-      <figcaption>
-        <blockquote>
-          <p>"Exceptional tech solutions! Cyber Core has revolutionized our operations, 
-            delivering top-notch expertise and unparalleled innovation. A game-changer for any business!"</p><br><br>
-        </blockquote>
-        <h3>Liam Rodriguez</h3>
-        <h4>IT Manager</h4>
-      </figcaption>
-    </figure>
-    <figure class="testimonials">
-      <figcaption>
-        <blockquote>
-          <p>"Incredible service! Cyber Core has elevated our digital landscape. 
-            Their cutting-edge solutions and dedicated team have significantly boosted our efficiency. Highly recommend!"</p><br><br>
-        </blockquote>
-        <h3>Ava Thompson</h3>
-        <h4>Network Administrator</h4>
-      </figcaption>
-    </figure>
-    <figure class="testimonials">
-      <figcaption>
-        <blockquote>
-          <p>"Tech excellence at its best! Cyber Core surpassed our expectations with their brilliant solutions. 
-            Seamless integration, prompt support – they're the tech partner every business dreams of!"</p><br><br>
-        </blockquote>
-        <h3>Ethan Foster</h3>
-        <h4>Chief Information Security Officer</h4>
-      </figcaption>
-    </figure>
-    <div class="comment-form mb-5">
-      <h2>Tell Us Your Story</h2>
+
+    <form class="comment-form mb-5">
+      <h2>Tell Us Your Experience</h2>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
@@ -149,7 +129,25 @@
       <textarea id="comment" name="comment" rows="4" required></textarea>
 
       <button type="submit">Submit</button>
+    </form>
+    <div id="submission-message" style="display:none;">
+      <p>Thank you for your submission!</p>
     </div>
+
+    <script>
+      $(document).ready(function() {
+        $('.comment-form').on('submit', function(e) {
+          e.preventDefault(); // Prevents the default form submission
+
+          // Add your logic here if you need to handle the form data
+
+          // Hide the form and show the submission message
+          $(this).hide();
+          $('#submission-message').show();
+        });
+      });
+    </script>
+
   </div>
 
  <!-- Footer -->
@@ -164,7 +162,7 @@
         </div>
 
         <div class="col-md-4 d-flex align-center justify-content-center my-2">
-            <img class="col-md-4 d-flex align-items-center object-fit-contain" src="images/company_logo.png" style="height: 45px">
+            <img class="col-md-4 d-flex align-items-center object-fit-contain" src="images/company_logo.png" style="height: 45px" alt="">
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex my-2">
@@ -177,9 +175,8 @@
 <script>
   // JavaScript Automated Date 
   function updateDateTime() {
-      var currentDateTime = new Date();
-      var formattedDateTime = currentDateTime.toLocaleString();
-      document.getElementById('datetime').innerHTML = formattedDateTime;
+    let currentDateTime = new Date();
+    document.getElementById('datetime').innerHTML = currentDateTime.toLocaleString();
   }
 
   setInterval(updateDateTime, 1000);
