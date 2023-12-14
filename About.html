@@ -120,7 +120,7 @@
         </div>
 
         <div class="col-md-4 d-flex align-center justify-content-center my-2">
-            <img class="col-md-4 d-flex align-items-center object-fit-contain" src="images/company_logo.png" style="height: 45px">
+            <img class="col-md-4 d-flex align-items-center object-fit-contain" src="images/company_logo.png" style="height: 45px" alt="">
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex my-2">
@@ -133,9 +133,8 @@
 <script>
     // JavaScript Automated Date 
     function updateDateTime() {
-        var currentDateTime = new Date();
-        var formattedDateTime = currentDateTime.toLocaleString();
-        document.getElementById('datetime').innerHTML = formattedDateTime;
+        let currentDateTime = new Date();
+        document.getElementById('datetime').innerHTML = currentDateTime.toLocaleString();
     }
 
     setInterval(updateDateTime, 1000);
