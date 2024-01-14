@@ -1,10 +1,9 @@
-// JavaScript Automated Date
 function updateDateTime() {
     let currentDateTime = new Date();
     document.getElementById('datetime').innerHTML = currentDateTime.toLocaleString();
 }
 
-setInterval(updateDateTime, 1000);
+setInterval(updateDateTime, 0);
 
 $(document).ready(function() {
     $('#DiscountCode').click(function() {
@@ -18,16 +17,13 @@ $(document).ready(function() {
 });
 
 function initMap() {
-    // Coordinates for the address
     let addressCoordinates = { lat: 40.7712, lng: -111.9002 };
 
-    // Create a new map
     let map = new google.maps.Map(document.getElementById('map'), {
         center: addressCoordinates,
         zoom: 17
     });
 
-    // Add a marker
     let marker = new google.maps.Marker({
         position: addressCoordinates,
         map: map,
@@ -87,16 +83,13 @@ $(document).ready(function() {
     });
 
     setupPagination();
-    showReviews(currentPage); // Show the first set of reviews
+    showReviews(currentPage);
 });
 
 $(document).ready(function() {
     $('.comment-form').on('submit', function(e) {
-        e.preventDefault(); // Prevents the default form submission
+        e.preventDefault();
 
-        // Add your logic here if you need to handle the form data
-
-        // Hide the form and show the submission message
         $(this).hide();
         $('#submission-message').show();
     });
