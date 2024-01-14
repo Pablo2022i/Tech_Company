@@ -10,8 +10,8 @@ $(document).ready(function() {
         let text = "HOLIDAY";
         navigator.clipboard.writeText(text).then(function() {
             alert('Discount code copied');
-        }, function(err) {
-            alert('Failed to copy text: ', err);
+        }, function() {
+            alert('Failed to copy text: ');
         });
     });
 });
