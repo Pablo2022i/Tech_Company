@@ -151,35 +151,8 @@
         </ul>
     </footer>
 </div>
-    <script>
-        // JavaScript Automated Date
-        function updateDateTime() {
-            let currentDateTime = new Date();
-            document.getElementById('datetime').innerHTML = currentDateTime.toLocaleString();
-        }
 
-        setInterval(updateDateTime, 1000);
-    </script>
-
-    <script>
-        function initMap() {
-            // Coordinates for the address
-            let addressCoordinates = { lat: 40.7712, lng: -111.9002 };
-
-            // Create a new map
-            let map = new google.maps.Map(document.getElementById('map'), {
-                center: addressCoordinates,
-                zoom: 17
-            });
-
-            // Add a marker
-            let marker = new google.maps.Marker({
-                position: addressCoordinates,
-                map: map,
-                title: 'CyberCore Technology'
-            });
-        }
-    </script>
+<script src="index.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
